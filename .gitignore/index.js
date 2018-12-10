@@ -97,17 +97,17 @@ client.on("message", async message => {
     if (!member)
       return message.reply("Merci de mentionner un membre valide de ce serveur");
     if (!member.kickable)
-      return message.reply("Tu veux ban ton maître ?");
+      return message.reply("Tu veux kick ton maître ?");
 
     // slice(1) removes the first part, which here should be the user mention or ID
     // join(' ') takes all the various parts to make it a single string.
     let reason = args.slice(1).join(' ');
-    if (!reason) reason = "Aucune raison fournie";
+    if (!reason) reason = "j'ai envie.";
 
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
       .catch(error => message.reply(`Désolé ${message.author} Je ne pouvais pas kick à cause de : ${error}`));
-    message.reply(`${member.user.tag} a été kick par ${message.author.tag} car: ${reason}`);
+    message.reply(`${member.user.tag} a été kick par ${message.author.tag} car ${reason}`);
 
   }
 
@@ -124,11 +124,11 @@ client.on("message", async message => {
       return message.reply("Tu veux ban ton maître ?");
 
     let reason = args.slice(1).join(' ');
-    if (!reason) reason = "Aucune raison fournie";
+    if (!reason) reason = "j'ai envie.";
 
     await member.ban(reason)
       .catch(error => message.reply(`Désolé ${message.author} Je ne pouvais pas ban à cause de : ${error}`));
-    message.reply(`${member.user.tag} a été banni par ${message.author.tag} car: ${reason}`);
+    message.reply(`${member.user.tag} a été banni par ${message.author.tag} car ${reason}`);
   }
 
   if (command === "clear") {
