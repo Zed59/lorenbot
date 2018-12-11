@@ -76,7 +76,7 @@ client.on("message", async message => {
   if (command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = ("Grrrrr jtm mn bb");
+    const sayMessage = ("Bonjour, je m'appelle Lorenzob(provisoire) et j'ai pour projet de devenir un futur bot utilitaire avec énormément de commandes utiles et pratique pour votre serveur. Actuellement mon propriétaire et entrain de me coder pour atteindre mon objectif final. PS: J'aime jouer avec le zgeg de nordine");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o => {});
     // And we get the bot to say the thing: 
