@@ -154,7 +154,7 @@ client.on("message", async message => {
       .setTitle("Information:")
       .addField("Version", "1.0.0")
       .addField("Crée le", "09/12/2018")
-      .addField("Crée par", "Link#8217")
+      .addField("Crée par", "Faucheur")
       .setColor("0xFF0000")
     message.channel.sendEmbed(embed);
 
