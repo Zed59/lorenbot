@@ -89,7 +89,7 @@ client.on("message", async message => {
     var embed = new Discord.RichEmbed()
       .setTitle(" ")
       .addField("Commandes Utilisateur:", "\n +help \n +clear \n +ping")
-      .addField("Commandes Admin:", "\n +kick \n +ban")
+      .addField("Commandes Admin:", "\n +kick \n +ban \n +mute")
       .setColor("0xFF0000")
     message.channel.sendEmbed(embed);
 
