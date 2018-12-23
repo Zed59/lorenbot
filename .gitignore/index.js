@@ -64,8 +64,26 @@ client.on("message", async message => {
           name: "Utilisateurs mutés",
           color:"#000000",
           permissions:[]
-})
-  
+        });
+
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(role, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      } catch (e) {
+        console.log(e.stack)
+      }
+    }
+
+    if(toMute.roles.has(role.id)) return message.channel.send('Cet utilisateur est déjà muté !');
+
+    await(toMute.addRole(role));
+    message.channel.send("Je l'ai muté !");
+
+    return;
+  }
 
   if (command === "help"){
     var embed = new Discord.RichEmbed()
